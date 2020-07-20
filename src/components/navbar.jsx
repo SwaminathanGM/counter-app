@@ -1,12 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-const NavBar = ({ totalCounters }) => {
+const NavBar = ({ totalCounters, totalNoSelections }) => {
   return (
-    <nav class='navbar navbar-light bg-light'>
-      <a class='navbar-brand' href='#'>
+    <nav className='navbar navbar-light bg-light'>
+      <a className='navbar-brand' href='/#'>
         No of Products in Cart{' '}
         <span className='badge badge-pill badge-secondary'>
           {totalCounters}
+        </span>{' '}
+        No of Items in Cart{' '}
+        <span className='badge badge-pill badge-secondary'>
+          {totalNoSelections}
         </span>
       </a>
     </nav>

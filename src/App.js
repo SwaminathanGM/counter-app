@@ -33,11 +33,22 @@ class App extends Component {
     });
     this.setState({ counters });
   };
+
+  handleSelection = () => {
+    let totalValue = 0;
+    this.state.counters.map((v) => {
+      totalValue += v.value;
+      return totalValue;
+    });
+    return totalValue;
+  };
+
   render() {
     return (
       <React.Fragment>
         <NavBar
           totalCounters={this.state.counters.filter((c) => c.value > 0).length}
+          totalNoSelections={this.handleSelection()}
         />
         <main className='container'>
           <Counters
